@@ -1,6 +1,9 @@
+require('dotenv').config()
 const { MongoClient } = require('mongodb')
 
-const uri = "mongodb+srv://juniorpocay:GrxW3DiGFYQQwUpy@clusterfirstdb.gpfb4a7.mongodb.net/?retryWrites=true&w=majority"
+const user = process.env.USER
+const password = process.env.PASS
+const uri = `mongodb+srv://${user}:${password}@clusterfirstdb.gpfb4a7.mongodb.net/?retryWrites=true&w=majority`
 
 const client = new MongoClient(uri)
 
